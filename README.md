@@ -4,6 +4,21 @@ Technical coding assignment given by [Hackwagon Academy](https://hackwagon.com/)
 
 Purpose of project is to demonstrate basic knowledge of [Jest](https://jestjs.io/) testing framework.
 
+## Getting Started
+To compile and run scripts to display outputs:
+```bash
+npm run build
+npm start
+# or
+tsc ./src/*.ts
+node ./src/app
+```
+
+To run Jest test files:
+```bash
+npm test
+```
+
 ## Given Scenario
 
 ### Your objective:
