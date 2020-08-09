@@ -15,9 +15,7 @@ function calculateCostPerUnit(ingredient: Ingredient): number {
     }
     costPerUnit += +((item.amt / item.ingredient.weight) * item.ingredient.cost).toFixed(2);
   });
-  let temp = costPerUnit.toString()
-  costPerUnit = +temp.slice(0, (temp.indexOf("."))+3) // Remove trailing numbers
-  return costPerUnit;
+  return +costPerUnit.toFixed(2); // Set to 2 decimal places
 }
 
 export { calculateCostPerUnit };

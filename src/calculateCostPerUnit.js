@@ -14,8 +14,6 @@ function calculateCostPerUnit(ingredient) {
         }
         costPerUnit += +((item.amt / item.ingredient.weight) * item.ingredient.cost).toFixed(2);
     });
-    var temp = costPerUnit.toString();
-    costPerUnit = +temp.slice(0, (temp.indexOf(".")) + 3); // Remove trailing numbers
-    return costPerUnit;
+    return +costPerUnit.toFixed(2); // Set to 2 decimal places
 }
 exports.calculateCostPerUnit = calculateCostPerUnit;

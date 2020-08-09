@@ -1,24 +1,24 @@
-import { chocolateCake } from "./../src/ingredients";
 import {
   Ingredient,
   chocolatePaste,
   chocolateBatter,
+  chocolateCake,
 } from "../src/ingredients";
 import { calculateCostPerUnit } from "../src/calculateCostPerUnit";
 import { calculateMeta } from "../src/calculateMeta";
 
 describe("calculate cost per unit", () => {
-  test("it should take in an Ingredient object and return a number value", () => {
+  test("calculateCostPerUnit should take in an Ingredient object and return a number value", () => {
     chocolatePaste.cost = calculateCostPerUnit(chocolatePaste);
     chocolateBatter.cost = calculateCostPerUnit(chocolateBatter);
 
-    expect(chocolatePaste.cost).toBe(14);
-    expect(chocolateBatter.cost).toBe(26.86);
+    expect(chocolatePaste.cost).toEqual(expect.any(Number));
+    expect(chocolateBatter.cost).toEqual(expect.any(Number));
   });
 });
 
 describe("calculate product meta data", () => {
-  test("it should take in an Ingredient object and return an object", () => {
+  test("calculateMeta should take in an Ingredient object and return an object { cost: number, weight: number, costPerUnit: number }", () => {
     expect(calculateMeta(chocolateCake)).toEqual({
       cost: expect.any(Number),
       weight: expect.any(Number),

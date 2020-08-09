@@ -16,9 +16,11 @@ function calculateMeta(
     metadata.cost += item.ingredient.cost;
     metadata.weight += item.ingredient.weight;
   });
+  metadata.cost = +metadata.cost.toFixed(2) // Set to 2 decimal places
+  metadata.weight = +metadata.weight.toFixed(2)
   metadata.costPerUnit += +(metadata.cost / (metadata.weight / 1000)).toFixed(
     2
-  ); // Assume one unit to be 1 kg
+  ); // Assume one unit to be 1 kg / 1000 g
   ingredient.cost = metadata.cost;
   ingredient.weight = metadata.weight;
   return metadata;
